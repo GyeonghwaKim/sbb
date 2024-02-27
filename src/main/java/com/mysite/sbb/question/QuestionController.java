@@ -30,11 +30,13 @@ public class QuestionController {
 
 
     @GetMapping("/list")
-    public String list(Model model,@RequestParam(value = "page", defaultValue = "0") int page)
+    public String list(Model model,@RequestParam(value = "page", defaultValue = "0") int page,
+                       @RequestParam(value = "kw",defaultValue = "")String kw)
     {
         //List<Question> questionList=this.questionService.getList();
-        Page<Question> paging=this.questionService.getList(page);
+        Page<Question> paging=this.questionService.getList(page,kw);
         model.addAttribute("paging",paging); //Model 클래스를 사용하여 조회한 질문 목록 데이터를 템플릿에 전달
+        model.addAttribute("kw",kw);
         return "question_list";
     }
 
