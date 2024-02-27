@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--bootStrap css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/bootstrap.min.css}">
+    <!--sbb css-->
+    <link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+    <title>Hello, sbb!</title>
+</head>
+<body>
+<!-- th:replace: 지정된 템플릿을 현재 요소에 대체합니다 -->
+    <nav th:replace="~{navbar ::navbarFragment}"></nav>
+    <!--기본 템플립 삽입 내용-->
+    <th:block layout:fragment="content"></th:block>
+
+    <!--자바스크립트 부트스트랩-->
+    <script th:src="@{/bootstrap.min.js}"></script>
+
+    <th:block layout:fragment="script"></th:block>
+</body>
+</html>
