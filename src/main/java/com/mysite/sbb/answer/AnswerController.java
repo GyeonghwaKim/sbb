@@ -36,7 +36,8 @@ public class AnswerController {
                                Principal principal){  // 사용자 정보 알려주는 스프링 시큐리티 객체
         Question question=this.questionService.getQuestion(id);
         SiteUser siteUser=this.userService.getUser(principal.getName());
-        if(bindingResult.hasErrors()){
+        if(bindingResult
+                .hasErrors()){
             model.addAttribute("question",question);//question_detail은 question객체가 필요해서 ..
             return "question_detail";
         }

@@ -69,6 +69,10 @@ public class QuestionService {
         }
     }
 
+    public Optional<Question> getOQuestion(Integer id){
+        return this.questionRepository.findById(id);
+    }
+
     public void create(String subject, String content, SiteUser siteUser){
         Question q=new Question();
         q.setSubject(subject);

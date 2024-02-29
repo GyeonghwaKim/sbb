@@ -42,6 +42,7 @@ application.yml
 .gradle/
 .idea/
 build
+study
 
 
 

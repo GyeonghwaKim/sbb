@@ -36,5 +36,9 @@ public class UserService {
         }
     }
 
+    public Optional<SiteUser> getOUser(String name){
+        return this.userRepository.findByusername(name);
+    }
+
 
 }
